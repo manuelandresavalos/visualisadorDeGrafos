@@ -1,6 +1,6 @@
-var width = window.visualViewport.width - 20,
-	height = window.visualViewport.height - 20;
-
+var width = window.visualViewport.width - 20;
+var height = window.visualViewport.height - 20;
+// var color = d3.schemePastel1;
 var color = d3.scale.category20();
 
 var cola = cola.d3adaptor().size([
@@ -8,7 +8,20 @@ var cola = cola.d3adaptor().size([
 	height
 ]);
 
+// const zoom = d3
+// 	.zoom()
+// 	.scaleExtent([
+// 		1,
+// 		40
+// 	])
+// 	.on('zoom', zoomed);
+
 var svg = d3.select('body').append('svg').attr('id', 'svgContainer').attr('width', width).attr('height', height);
+// svg.call(zoom);
+
+// function zoomed() {
+// 	svg.attr('transform', d3.event.transform);
+// }
 
 let dataSetJson = './data/teams.json';
 var filter = getParameterByName('filter');
@@ -17,14 +30,16 @@ var filter = getParameterByName('filter');
 if (filter.length > 0) {
 	dataSetJson += '?filter=' + filter;
 }
+var data;
 
 d3.json(dataSetJson, function(error, graph) {
 	var pageBounds = { x: 0, y: 0, width: width, height: height };
 	var page = svg.append('rect').attr('id', 'page').attr(pageBounds);
 	var realGraphNodes = graph.nodes.slice(0);
 	console.log(graph);
+	data = graph;
 
-	var fixedNode = { fixed: true, fixedWeight: 100 };
+	var fixedNode = { fixed: false, fixedWeight: 100 };
 	var topLeft = { ...fixedNode, x: pageBounds.x, y: pageBounds.y };
 	var bottomRight = { ...fixedNode, x: pageBounds.x + pageBounds.width, y: pageBounds.y + pageBounds.height };
 
@@ -49,8 +64,6 @@ d3.json(dataSetJson, function(error, graph) {
 		.attr('r', function(d) {
 			return d.radius;
 		})
-		.attr('cx', 200)
-		.attr('style', "filter=url('#dropshadow')")
 		.style('fill', function(d) {
 			return color(d.group);
 		})
@@ -114,36 +127,6 @@ d3.json(dataSetJson, function(error, graph) {
 	});
 });
 
-var elem = document.documentElement;
-function openFullscreen() {
-	if (elem.requestFullscreen) {
-		elem.requestFullscreen();
-	}
-	else if (elem.mozRequestFullScreen) {
-		/* Firefox */
-		elem.mozRequestFullScreen();
-	}
-	else if (elem.webkitRequestFullscreen) {
-		/* Chrome, Safari & Opera */
-		elem.webkitRequestFullscreen();
-	}
-	else if (elem.msRequestFullscreen) {
-		/* IE/Edge */
-		elem.msRequestFullscreen();
-	}
-}
-
-/**
-   * @param String name
-   * @return String
-   */
-function getParameterByName(name) {
-	name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-	var regex = new RegExp('[\\?&]' + name + '=([^&#]*)'),
-		results = regex.exec(location.search);
-	return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-}
-
 function overCircle() {
 	console.log('over', this);
 }
@@ -152,26 +135,56 @@ function outCircle() {
 }
 function clickCircle(d) {
 	if (d.group != 1) {
+		let tagId = d.id;
+		let dependence = d.name;
+
+		//Busco entre los links, los equipos relacionados al tag/dependencia a la que le hice click.
+		let teamsFiltered = [];
+		cola
+			.links()
+			.filter(function(link) {
+				if (link.source.id == tagId) {
+					return true;
+				}
+			})
+			.forEach(function(element) {
+				let el = cola.nodes()[element.target.id];
+				teamsFiltered.push(el);
+			});
+
+		//Busco los tickets de Jira de cada equipo, relacionados con la dependencia a la que le hice click.
+		let jiraTickets = [];
+		let html = document.getElementById('detalles');
+		let newHTML = '';
+		newHTML += '<h2 class="title">' + dependence + '</h2>';
+		teamsFiltered.map(function(team) {
+			newHTML += '<div class="equipo">';
+			newHTML += '  <div class="titleTeam">' + team.name + '</div>';
+			newHTML += '  <ul>';
+			team.tickets.map(function(objTicket) {
+				if (objTicket.dim == tagId) {
+					// console.log(team.name);
+					console.log(objTicket);
+					jiraTickets.push(objTicket);
+					newHTML += '    <li><a href="' + objTicket.idJira + '">' + objTicket.idJira + '</a></li>';
+				}
+			});
+			newHTML += '  </ul>';
+			newHTML += '</div>';
+		});
+
 		var detalles = document.getElementById('detalles');
+		html.innerHTML = newHTML;
 		show(detalles);
 	}
 }
-
-// Show an element
-var show = function(elem) {
-	elem.style.display = 'block';
-};
-
-// Hide an element
-var hide = function(elem) {
-	elem.style.display = 'none';
-};
 
 document.body.addEventListener(
 	'click',
 	function(event) {
 		if (event.target.id == 'page') {
 			var detalles = document.getElementById('detalles');
+
 			hide(detalles);
 		}
 	},

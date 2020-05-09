@@ -5,6 +5,12 @@
 			"name": "Core Ancillaries",
 			"radius": 20,
 			"group": 1,
+			"tickets": [
+				{ "dim": 14, "idJira": "JIRA-123", "descJira": "Jira-123 - Bla bla bla bla bla" },
+				{ "dim": 14, "idJira": "JIRA-452", "descJira": "Jira-452 - Bla bla bla bla bla" },
+				{ "dim": 14, "idJira": "JIRA-944", "descJira": "Jira-944 - Bla bla bla bla bla" },
+				{ "dim": 15, "idJira": "JIRA-944", "descJira": "Jira-944 - Bla bla bla bla bla" }
+			],
 			"dimentions": [
 				14,
 				15
@@ -15,6 +21,12 @@
 			"name": "XP Capabilities",
 			"radius": 20,
 			"group": 1,
+			"tickets": [
+				{ "dim": 7, "idJira": "JIRA-5844", "descJira": "Jira-5844 - Bla bla bla bla bla" },
+				{ "dim": 6, "idJira": "JIRA-658", "descJira": "Jira-658 - Bla bla bla bla bla" },
+				{ "dim": 6, "idJira": "JIRA-641", "descJira": "Jira-641 - Bla bla bla bla bla" },
+				{ "dim": 11, "idJira": "JIRA-419", "descJira": "Jira-419 - Bla bla bla bla bla" }
+			],
 			"dimentions": [
 				6,
 				7,
@@ -26,6 +38,10 @@
 			"name": "XP Equipo Producto",
 			"radius": 20,
 			"group": 1,
+			"tickets": [
+				{ "dim": 12, "idJira": "JIRA-12", "descJira": "Jira-12 - Bla bla bla bla bla" },
+				{ "dim": 13, "idJira": "JIRA-13", "descJira": "Jira-13 - Bla bla bla bla bla" }
+			],
 			"dimentions": [
 				12,
 				13
@@ -36,6 +52,12 @@
 			"name": "XP NonCore Ancilliaries",
 			"radius": 20,
 			"group": 1,
+			"tickets": [
+				{ "dim": 7, "idJira": "JIRA-477", "descJira": "Jira-477 - Bla bla bla bla bla" },
+				{ "dim": 6, "idJira": "JIRA-658", "descJira": "Jira-658 - Bla bla bla bla bla" },
+				{ "dim": 6, "idJira": "JIRA-641", "descJira": "Jira-641 - Bla bla bla bla bla" },
+				{ "dim": 5, "idJira": "JIRA-5", "descJira": "Jira-5 - Bla bla bla bla bla" }
+			],
 			"dimentions": [
 				5,
 				6,
@@ -47,6 +69,14 @@
 			"name": "XP Screenlees",
 			"radius": 20,
 			"group": 1,
+			"tickets": [
+				{ "dim": 5, "idJira": "JIRA-5", "descJira": "Jira-5 - Bla bla bla bla bla" },
+				{ "dim": 5, "idJira": "JIRA-78", "descJira": "Jira-78 - Bla bla bla bla bla" },
+				{ "dim": 5, "idJira": "JIRA-99", "descJira": "Jira-99 - Bla bla bla bla bla" },
+				{ "dim": 8, "idJira": "JIRA-8", "descJira": "Jira-8 - Bla bla bla bla bla" },
+				{ "dim": 9, "idJira": "JIRA-9", "descJira": "Jira-9 - Bla bla bla bla bla" },
+				{ "dim": 10, "idJira": "JIRA-10", "descJira": "Jira-10 - Bla bla bla bla bla" }
+			],
 			"dimentions": [
 				5,
 				8,
