@@ -2,72 +2,84 @@
 	"nodes": [
 		{
 			"id": 0,
-			"name": "Team 1",
-			"radius": 30,
+			"name": "Core Ancillaries",
+			"radius": 20,
 			"group": 1,
 			"dimentions": [
-				12,
-				13,
 				14,
 				15
 			]
 		},
 		{
 			"id": 1,
-			"name": "Team 2",
-			"radius": 30,
+			"name": "XP Capabilities",
+			"radius": 20,
 			"group": 1,
 			"dimentions": [
-				3,
-				4,
+				6,
+				7,
+				11
+			]
+		},
+		{
+			"id": 2,
+			"name": "XP Equipo Producto",
+			"radius": 20,
+			"group": 1,
+			"dimentions": [
+				12,
+				13
+			]
+		},
+		{
+			"id": 3,
+			"name": "XP NonCore Ancilliaries",
+			"radius": 20,
+			"group": 1,
+			"dimentions": [
 				5,
 				6,
 				7
 			]
 		},
 		{
-			"id": 2,
-			"name": "Team 3",
-			"radius": 30,
+			"id": 4,
+			"name": "XP Screenlees",
+			"radius": 20,
 			"group": 1,
 			"dimentions": [
+				5,
 				8,
 				9,
-				10,
-				11
+				10
 			]
 		},
-		{ "id": 3, "name": "", "hiddenName": "Manuel Avalos [Dev]", "radius": 10, "group": 6 },
-		{ "id": 4, "name": "", "hiddenName": "Marcos Heredia [TL]", "radius": 10, "group": 3 },
-		{ "id": 5, "name": "", "hiddenName": "Gonzalo Barco [TM]", "radius": 10, "group": 4 },
-		{ "id": 6, "name": "", "hiddenName": "Diana Salinas [PM/SM]", "radius": 10, "group": 5 },
-		{ "id": 7, "name": "", "hiddenName": "Martin  Migoya [VIP]", "radius": 10, "group": 2 },
-		{ "id": 8, "name": "", "hiddenName": "Santiago Gomez [QC]", "radius": 10, "group": 8 },
-		{ "id": 9, "name": "", "hiddenName": "Margarita Suarez [Dev]", "radius": 10, "group": 6 },
-		{ "id": 10, "name": "", "hiddenName": "Pepi [BA]", "radius": 10, "group": 9 },
-		{ "id": 11, "name": "", "hiddenName": "Pedro Gimenez Perez [Dev]", "radius": 10, "group": 6 },
-		{ "id": 12, "name": "", "hiddenName": "Adrian Perez [Dev]", "radius": 10, "group": 6 },
-		{ "id": 13, "name": "", "hiddenName": "Antonieta Lopez Lotero [QC]", "radius": 10, "group": 8 },
-		{ "id": 14, "name": "", "hiddenName": "Nicolás Pignata [QCL]", "radius": 10, "group": 7 },
-		{ "id": 15, "name": "", "hiddenName": "Jorge Curima [Dev]", "radius": 10, "group": 6 },
-		{ "id": 16, "name": "", "hiddenName": "Joel Arce [Dev]", "radius": 10, "group": 6 }
+		{ "id": 5, "name": "Dependencia-1", "radius": 10, "group": 2 },
+		{ "id": 6, "name": "Dependencia-2", "radius": 10, "group": 2 },
+		{ "id": 7, "name": "Dependencia-3", "radius": 10, "group": 2 },
+		{ "id": 8, "name": "Dependencia-10", "radius": 10, "group": 2 },
+		{ "id": 9, "name": "Dependencia-22", "radius": 10, "group": 2 },
+		{ "id": 10, "name": "Dependencia-12", "radius": 10, "group": 2 },
+		{ "id": 11, "name": "Dependencia-55", "radius": 10, "group": 2 },
+		{ "id": 12, "name": "Dependencia-9", "radius": 10, "group": 2 },
+		{ "id": 13, "name": "Dependencia-0", "radius": 10, "group": 2 },
+		{ "id": 14, "name": "Pricing", "radius": 10, "group": 2 },
+		{ "id": 15, "name": "GDS", "radius": 10, "group": 2 }
 	],
 	"links": [
-		{ "source": 12, "target": 0, "value": 1 },
-		{ "source": 13, "target": 0, "value": 1 },
 		{ "source": 14, "target": 0, "value": 1 },
 		{ "source": 15, "target": 0, "value": 1 },
-		{ "source": 16, "target": 0, "value": 1 },
-
-		{ "source": 3, "target": 1, "value": 1 },
-		{ "source": 4, "target": 1, "value": 1 },
-		{ "source": 5, "target": 1, "value": 1 },
 		{ "source": 6, "target": 1, "value": 1 },
 		{ "source": 7, "target": 1, "value": 1 },
-
-		{ "source": 8, "target": 2, "value": 64 },
-		{ "source": 9, "target": 2, "value": 8 },
-		{ "source": 10, "target": 2, "value": 1 },
-		{ "source": 11, "target": 2, "value": 1 }
+		{ "source": 11, "target": 1, "value": 1 },
+		{ "source": 12, "target": 2, "value": 1 },
+		{ "source": 13, "target": 2, "value": 1 },
+		{ "source": 5, "target": 3, "value": 1 },
+		{ "source": 6, "target": 3, "value": 1 },
+		{ "source": 7, "target": 3, "value": 1 },
+		{ "source": 8, "target": 4, "value": 1 },
+		{ "source": 9, "target": 4, "value": 1 },
+		{ "source": 5, "target": 4, "value": 1 },
+		{ "source": 10, "target": 4, "value": 1 }
 	]
 }
