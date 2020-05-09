@@ -176,3 +176,11 @@ document.body.addEventListener(
 	},
 	false
 );
+
+window.addEventListener('resize', function(event) {
+	let page = document.getElementById('page');
+	let w = window.visualViewport.width - 20;
+	page.setAttribute('width', w);
+	//page.setAttribute('height', window.visualViewport.height - 20);
+	console.log('me muevo ' + w);
+});
