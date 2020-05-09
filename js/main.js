@@ -26,19 +26,9 @@ d3.json(dataSetJson, function(error, graph) {
 
 	var fixedNode = { fixed: true, fixedWeight: 100 };
 	var topLeft = { ...fixedNode, x: pageBounds.x, y: pageBounds.y };
-	var tlIndex = graph.nodes.push(topLeft) - 1;
 	var bottomRight = { ...fixedNode, x: pageBounds.x + pageBounds.width, y: pageBounds.y + pageBounds.height };
-	var brIndex = graph.nodes.push(bottomRight) - 1;
-	var constraints = [];
 
-	cola
-		.nodes(graph.nodes)
-		.links(graph.links)
-		/*.jaccardLinkLengths(40, 0.2)*/
-		/*.symmetricDiffLinkLengths(30)*/
-		.linkDistance(80)
-		/*.handleDisconnected(true)*/
-		.start(30);
+	cola.nodes(graph.nodes).links(graph.links).linkDistance(80).start(30);
 
 	var link = svg
 		.selectAll('.link')
@@ -65,9 +55,8 @@ d3.json(dataSetJson, function(error, graph) {
 			return color(d.group);
 		})
 		.call(cola.drag)
-		/*.on("mouseover", overCircle)
-        .on("mouseout", outCircle)
-        */
+		// .on('mouseover', overCircle)
+		// .on('mouseout', outCircle)
 		.on('click', clickCircle);
 
 	var label = svg
@@ -76,8 +65,6 @@ d3.json(dataSetJson, function(error, graph) {
 		.enter()
 		.append('text')
 		.attr('class', 'label')
-		/*.text(function (d) { return d.name; })*/
-		/*.style("fill", "#F00")*/
 		.style('fill', function(d) {
 			return color(d.group);
 		})
