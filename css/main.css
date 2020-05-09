@@ -1,0 +1,50 @@
+/*@import url(../style.css);*/
+
+.node {
+	stroke: #fff;
+	stroke-width: 3px;
+}
+
+.link {
+	stroke: #999;
+	stroke-opacity: .8;
+}
+
+body {
+	background: #dddddd;
+}
+
+#page {
+	fill: #262626;
+	stroke: #bbb;
+	stroke-width: 1px;
+}
+
+#loading {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	z-index: 1;
+}
+
+#svgContainer {
+	position: absolute;
+	z-index: 2;
+}
+
+#detalles {
+	display: none;
+	position: absolute;
+	top: 20px;
+	bottom: 30px;
+	right: 30px;
+	width: 380px;
+	border: 1px solid #ccc;
+	padding: 20px;
+	background-color: #fff;
+	z-index: 3;
+}
+
+#detalles h2 {
+	margin-top: 0px;
+}
