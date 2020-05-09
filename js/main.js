@@ -1,6 +1,5 @@
 var width = window.visualViewport.width - 20;
 var height = window.visualViewport.height - 20;
-// var color = d3.schemePastel1;
 var color = d3.scale.category20();
 
 var cola = cola.d3adaptor().size([
@@ -8,20 +7,7 @@ var cola = cola.d3adaptor().size([
 	height
 ]);
 
-// const zoom = d3
-// 	.zoom()
-// 	.scaleExtent([
-// 		1,
-// 		40
-// 	])
-// 	.on('zoom', zoomed);
-
 var svg = d3.select('body').append('svg').attr('id', 'svgContainer').attr('width', width).attr('height', height);
-// svg.call(zoom);
-
-// function zoomed() {
-// 	svg.attr('transform', d3.event.transform);
-// }
 
 let dataSetJson = './data/teams.json';
 var filter = getParameterByName('filter');
@@ -164,7 +150,7 @@ function clickCircle(d) {
 			team.tickets.map(function(objTicket) {
 				if (objTicket.dim == tagId) {
 					// console.log(team.name);
-					console.log(objTicket);
+					// console.log(objTicket);
 					jiraTickets.push(objTicket);
 					newHTML += '    <li><a href="' + objTicket.idJira + '">' + objTicket.idJira + '</a></li>';
 				}
