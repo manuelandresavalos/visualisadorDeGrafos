@@ -152,7 +152,7 @@ function clickCircle(d) {
 					// console.log(team.name);
 					// console.log(objTicket);
 					jiraTickets.push(objTicket);
-					newHTML += '    <li><a href="' + objTicket.idJira + '">' + objTicket.idJira + '</a></li>';
+					newHTML += '    <li><a href="' + objTicket.idJira + '" target="_blank">' + objTicket.idJira + '</a></li>';
 				}
 			});
 			newHTML += '  </ul>';
