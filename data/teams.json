@@ -54,8 +54,8 @@
 			"group": 1,
 			"tickets": [
 				{ "dim": 7, "idJira": "JIRA-477", "descJira": "Jira-477 - Bla bla bla bla bla" },
-				{ "dim": 6, "idJira": "JIRA-658", "descJira": "Jira-658 - Bla bla bla bla bla" },
-				{ "dim": 6, "idJira": "JIRA-641", "descJira": "Jira-641 - Bla bla bla bla bla" },
+				{ "dim": 6, "idJira": "JIRA-659", "descJira": "Jira-659 - Bla bla bla bla bla" },
+				{ "dim": 6, "idJira": "JIRA-647", "descJira": "Jira-647 - Bla bla bla bla bla" },
 				{ "dim": 5, "idJira": "JIRA-5", "descJira": "Jira-5 - Bla bla bla bla bla" }
 			],
 			"dimentions": [

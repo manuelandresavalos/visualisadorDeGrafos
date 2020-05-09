@@ -3,6 +3,7 @@
 .node {
 	stroke: #fff;
 	stroke-width: 3px;
+	cursor: pointer;
 }
 
 .link {
